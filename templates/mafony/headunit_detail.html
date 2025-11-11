@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+{% block title %}SoundSphere - {{ headunit.name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="Хлебные крошки" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Главная</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'headunit_list' %}">Каталог</a></li>
+            <li class="breadcrumb-item active">{{ headunit.name }}</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="product-image-container">
+                <img src="{{ headunit.image.url }}" class="img-fluid rounded-3" alt="{{ headunit.name }}">
+                {% if headunit.in_stock %}
+                <div class="stock-badge in-stock">
+                    <i class="fas fa-check-circle me-1"></i>В наличии
+                </div>
+                {% else %}
+                <div class="stock-badge out-of-stock">
+                    <i class="fas fa-clock me-1"></i>Под заказ
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="product-info">
+                <h1 class="display-6 mb-3">{{ headunit.name }}</h1>
+                <p class="text-muted mb-4">
+                    <i class="fas fa-industry me-2"></i>{{ headunit.manufacturer.name }} •
+                    <i class="fas fa-globe me-2"></i>{{ headunit.country.name }}
+                </p>
+
+                <div class="price-section mb-4">
+                    <h2 class="text-primary">{{ headunit.price }} KZT</h2>
+                    <p class="text-success">
+                        <i class="fas fa-truck me-1"></i>Бесплатная доставка по Казахстану
+                    </p>
+                </div>
+
+                <div class="action-buttons mb-5">
+                    <button class="btn btn-primary btn-lg me-3" onclick="addToCart({{ headunit.id }})">
+                        <i class="fas fa-shopping-cart me-2"></i>Добавить в корзину
+                    </button>
+                    <button class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-heart me-2"></i>В избранное
+                    </button>
+                </div>
+
+                <div class="specifications-card glass-effect rounded-3 p-4 mb-4">
+                    <h4 class="mb-4">
+                        <i class="fas fa-list-alt me-2"></i>Характеристики
+                    </h4>
+                    <div class="row">
+                        <div class="col-sm-6 mb-3">
+                            <strong><i class="fas fa-tv me-2"></i>Размер экрана:</strong>
+                            <span class="float-end">{{ headunit.screen_size }}</span>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <strong><i class="fab fa-android me-2"></i>Версия Android:</strong>
+                            <span class="float-end">{{ headunit.android_version }}</span>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <strong><i class="fas fa-memory me-2"></i>Оперативная память:</strong>
+                            <span class="float-end">{{ headunit.ram }}</span>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <strong><i class="fas fa-hdd me-2"></i>Встроенная память:</strong>
+                            <span class="float-end">{{ headunit.storage }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="glass-effect rounded-3 p-4">
+                <h4 class="mb-4">
+                    <i class="fas fa-file-alt me-2"></i>Описание
+                </h4>
+                <p class="lead">{{ headunit.description }}</p>
+
+                <div class="features-grid mt-4">
+                    <h5 class="mb-3">Ключевые особенности:</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Поддержка Apple CarPlay/Android Auto</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Bluetooth 5.0</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Wi-Fi и 4G/LTE</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>GPS навигация</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Камера заднего вида</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Голосовое управление</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Steering wheel control</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Поддержка DAB+</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .product-image-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+
+    .stock-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .in-stock {
+        background: rgba(40, 167, 69, 0.9);
+        color: white;
+    }
+
+    .out-of-stock {
+        background: rgba(220, 53, 69, 0.9);
+        color: white;
+    }
+
+    .specifications-card {
+        border-left: 4px solid #4361ee;
+    }
+</style>
+{% endblock %}
