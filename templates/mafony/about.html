@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}SoundSphere - О компании{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Хлебные крошки -->
+    <nav aria-label="Хлебные крошки" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Главная</a></li>
+            <li class="breadcrumb-item active">О компании</li>
+        </ol>
+    </nav>
+
+    <!-- Герой секция -->
+    <section class="hero-section text-center py-5 mb-5">
+        <div class="container">
+            <h1 class="display-4 mb-4">О компании SoundSphere</h1>
+            <p class="lead">Мы создаем будущее автомобильных развлечений уже сегодня</p>
+        </div>
+    </section>
+
+    <!-- О компании -->
+    <section class="about-content mb-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4">
+                <div class="glass-effect rounded-3 p-4 h-100">
+                    <h2 class="mb-4">Наша миссия</h2>
+                    <p class="lead mb-4">Сделать каждую поездку комфортной, безопасной и технологичной.</p>
+                    <p>SoundSphere - это ведущий поставщик Android-магнитол премиум-класса для современных автомобилей. Мы объединяем передовые технологии с безупречным качеством, чтобы подарить нашим клиентам непревзойденный опыт вождения.</p>
+                    <p>Наша команда состоит из опытных инженеров и энтузиастов автомобильной электроники, которые понимают потребности современных водителей.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="stats-grid text-center">
+                    <div class="row">
+                        <div class="col-6 mb-4">
+                            <div class="stat-item glass-effect rounded-3 p-3">
+                                <h3 class="text-primary mb-2">5000+</h3>
+                                <p class="mb-0">Довольных клиентов</p>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="stat-item glass-effect rounded-3 p-3">
+                                <h3 class="text-primary mb-2">3 года</h3>
+                                <p class="mb-0">На рынке</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-item glass-effect rounded-3 p-3">
+                                <h3 class="text-primary mb-2">50+</h3>
+                                <p class="mb-0">Моделей в каталоге</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-item glass-effect rounded-3 p-3">
+                                <h3 class="text-primary mb-2">24/7</h3>
+                                <p class="mb-0">Техподдержка</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="advantages-section mb-5">
+        <h2 class="text-center mb-5">Наши преимущества</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="advantage-card glass-effect rounded-3 p-4 text-center h-100">
+                    <i class="fas fa-gem fa-3x text-primary mb-3"></i>
+                    <h4>Качество</h4>
+                    <p>Только оригинальное оборудование от проверенных производителей с гарантией качества.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="advantage-card glass-effect rounded-3 p-4 text-center h-100">
+                    <i class="fas fa-cogs fa-3x text-primary mb-3"></i>
+                    <h4>Технологии</h4>
+                    <p>Современные процессоры, высококачественные экраны и передовое программное обеспечение.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="advantage-card glass-effect rounded-3 p-4 text-center h-100">
+                    <i class="fas fa-headset fa-3x text-primary mb-3"></i>
+                    <h4>Поддержка</h4>
+                    <p>Круглосуточная техническая поддержка и помощь в установке оборудования.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Команда -->
+    <section class="team-section mb-5">
+        <h2 class="text-center mb-5">Наша команда</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="team-card glass-effect rounded-3 p-4 text-center">
+                    <div class="team-avatar mb-3">
+                        <i class="fas fa-user-tie fa-3x text-primary"></i>
+                    </div>
+                    <h5>Аркуев Жанибек</h5>
+                    <p class="text-muted">Основатель и CEO</p>
+                    <p>5 лет опыта в автомобильной электронике</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="team-card glass-effect rounded-3 p-4 text-center">
+                    <div class="team-avatar mb-3">
+                        <i class="fas fa-laptop-code fa-3x text-primary"></i>
+                    </div>
+                    <h5>Дуйсенов Алихан</h5>
+                    <p class="text-muted">Технический директор</p>
+                    <p>Специалист по Android-разработке</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="team-card glass-effect rounded-3 p-4 text-center">
+                    <div class="team-avatar mb-3">
+                        <i class="fas fa-tools fa-3x text-primary"></i>
+                    </div>
+                    <h5>Ершат Намет</h5>
+                    <p class="text-muted">Главный инженер</p>
+                    <p>Эксперт по установке и настройке</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    .stat-item {
+        transition: transform 0.3s ease;
+    }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+    .advantage-card {
+        transition: all 0.3s ease;
+    }
+
+        .advantage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+    .team-avatar {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(67, 97, 238, 0.1);
+        border-radius: 50%;
+    }
+</style>
+{% endblock %}

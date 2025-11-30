@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}SoundSphere - Товара нет в наличии{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+            <div class="error-container glass-effect rounded-3 p-5">
+                <div class="error-icon mb-4">
+                    <i class="fas fa-exclamation-triangle fa-5x text-warning"></i>
+                </div>
+
+                <h1 class="display-4 fw-bold text-warning mb-3">Упс!</h1>
+                <h2 class="mb-4">Этот товар сейчас нет в наличии</h2>
+
+                <div class="error-details glass-effect rounded-3 p-4 mb-4">
+                    <p class="lead mb-3">К сожалению, выбранный вами товар временно отсутствует на складе.</p>
+                    <p class="text-muted">Мы уже работаем над пополнением запасов. Вы можете оставить заявку, и мы сообщим вам, когда товар появится.</p>
+                </div>
+
+                <div class="error-actions">
+                    <a href="javascript:history.back()" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-arrow-left me-2"></i>Вернуться назад
+                    </a>
+                    <a href="{% url 'headunit_list' %}" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-shopping-cart me-2"></i>В каталог
+                    </a>
+                </div>
+
+                <div class="contact-info mt-4">
+                    <p class="text-muted">
+                        Хотите быть первым, кто узнает о поступлении?
+                        <a href="{% url 'contacts' %}" class="text-primary text-decoration-none">Оставьте заявку</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .error-container {
+        margin: 4rem 0;
+        animation: fadeInUp 0.8s ease-out;
+    }
+
+    .error-icon {
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-10px);
+        }
+
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+{% endblock %}

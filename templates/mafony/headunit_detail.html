@@ -15,7 +15,11 @@
     <div class="row">
         <div class="col-md-6 mb-4">
             <div class="product-image-container">
-                <img src="{{ headunit.image.url }}" class="img-fluid rounded-3" alt="{{ headunit.name }}">
+                {% if headunit.image %}
+                <img src="{{ headunit.image.url }}" alt="{{ headunit.name }}">
+                {% else %}
+                <img src="/static/images/soundsphere.png" alt="Default image">
+                {% endif %}
                 {% if headunit.in_stock %}
                 <div class="stock-badge in-stock">
                     <i class="fas fa-check-circle me-1"></i>В наличии

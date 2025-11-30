@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}SoundSphere - Страница не найдена{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="error-container glass-effect rounded-3 p-5">
+                <div class="error-icon mb-4">
+                    <i class="fas fa-exclamation-triangle fa-5x text-warning"></i>
+                </div>
+
+                <h1 class="display-1 fw-bold text-primary mb-3">404</h1>
+                <h2 class="mb-4">Страница не найдена</h2>
+
+                <p class="lead text-muted mb-4">
+                    К сожалению, запрашиваемая страница не существует или была перемещена.
+                    Возможно, вы ввели неправильный адрес или страница была удалена.
+                </p>
+
+                <div class="error-actions">
+                    <a href="{% url 'home' %}" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-home me-2"></i>На главную
+                    </a>
+                    <a href="{% url 'headunit_list' %}" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-shopping-cart me-2"></i>В каталог
+                    </a>
+                </div>
+
+                <div class="error-search mt-5">
+                    <p class="text-muted mb-3">Попробуйте найти нужную информацию:</p>
+                    <form action="{% url 'headunit_list' %}" method="get" class="d-flex gap-2 justify-content-center">
+                        <input type="text" name="q" class="form-control" placeholder="Поиск товаров..." style="max-width: 300px;">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .error-container {
+        margin: 4rem 0;
+        animation: fadeInUp 0.8s ease-out;
+    }
+
+    .error-icon {
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-10px);
+        }
+
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+{% endblock %}

@@ -5,6 +5,7 @@
     <Name>soundphereProject</Name>
     <RootNamespace>soundphereProject</RootNamespace>
     <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -31,6 +32,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="convert_encoding.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="create_sample_data.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="mafony\admin.py" />
     <Compile Include="mafony\api_urls.py">
       <SubType>Code</SubType>
@@ -48,7 +55,9 @@
     <Compile Include="mafony\urls.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="mafony\views.py" />
+    <Compile Include="mafony\views.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="mafony\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="soundphereProject\__init__.py" />
@@ -91,12 +100,23 @@
     <Content Include="db.sqlite3" />
     <Content Include="static\css\style.css" />
     <Content Include="static\js\script.js" />
+    <Content Include="templates\404.html" />
+    <Content Include="templates\500.html" />
     <Content Include="templates\base.html" />
+    <Content Include="templates\mafony\about.html" />
+    <Content Include="templates\mafony\cart.html" />
+    <Content Include="templates\mafony\contacts.html" />
+    <Content Include="templates\mafony\error_out_of_stock.html" />
     <Content Include="templates\mafony\headunit_detail.html" />
     <Content Include="templates\mafony\headunit_list.html" />
     <Content Include="templates\mafony\home.html" />
+    <Content Include="templates\mafony\simple_catalog.html" />
+    <Content Include="templates\mafony\simple_headunit_list.html" />
+    <Content Include="templates\mafony\wishlist.html" />
     <Content Include="templates\users\login.html" />
     <Content Include="templates\users\profile.html" />
+    <Content Include="templates\users\register.html" />
+    <Content Include="templates\403.html" />
     <Content Include="users\templates\users\index.html" />
   </ItemGroup>
   <ItemGroup>

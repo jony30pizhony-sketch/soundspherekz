@@ -1,4 +1,4 @@
-:root {
+п»ї:root {
     --primary-color: #4361ee;
     --secondary-color: #3a0ca3;
     --accent-color: #7209b7;
@@ -23,7 +23,7 @@ body {
     line-height: 1.6;
 }
 
-/* Логотип */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 .logo-container {
     display: flex;
     flex-direction: column;
@@ -156,7 +156,7 @@ body {
         font-weight: 300;
     }
 
-/* Кнопки */
+/* пїЅпїЅпїЅпїЅпїЅпїЅ */
 .btn-primary {
     background: var(--gradient-primary);
     border: none;
@@ -208,7 +208,7 @@ body {
         box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
     }
 
-/* Карточки товаров */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 .product-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -382,7 +382,7 @@ body {
     color: #b8b8b8;
 }
 
-/* Анимации */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -417,7 +417,7 @@ body {
     animation: float 3s ease-in-out infinite;
 }
 
-/* Пагинация */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 .pagination .page-item.active .page-link {
     background: var(--gradient-primary);
     border-color: #4361ee;
@@ -436,7 +436,7 @@ body {
         border-color: #4361ee;
     }
 
-/* Адаптивность */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 @media (max-width: 768px) {
     .hero-section h1 {
         font-size: 2.5rem;
@@ -460,7 +460,7 @@ body {
     }
 }
 
-/* Специальные эффекты */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 .glass-effect {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -484,9 +484,9 @@ body {
         box-shadow: 0 0 0 0 rgba(67, 97, 238, 0);
     }
 }
-/* Дополнительные стили для новых элементов */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 
-/* Хлебные крошки */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
 .breadcrumb {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
@@ -507,20 +507,20 @@ body {
     color: #ffffff;
 }
 
-/* Специальные контейнеры */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 .glass-effect {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Бейджи статусов */
+/* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 .badge {
     font-weight: 500;
     font-size: 0.8rem;
 }
 
-/* Аватар пользователя */
+/* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 .user-avatar {
     transition: transform 0.3s ease;
 }
@@ -529,19 +529,19 @@ body {
         transform: scale(1.1);
     }
 
-/* Кнопки действий */
+/* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 .action-buttons .btn {
     border-radius: 15px;
     padding: 12px 25px;
     font-weight: 600;
 }
 
-/* Сетка характеристик */
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 .features-grid ul li {
     padding: 5px 0;
 }
 
-/* Адаптивные изображения */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 .product-image-container img {
     transition: transform 0.3s ease;
 }
@@ -550,7 +550,7 @@ body {
     transform: scale(1.02);
 }
 
-/* Секция CTA */
+/* пїЅпїЅпїЅпїЅпїЅпїЅ CTA */
 .cta-section {
     position: relative;
     overflow: hidden;
@@ -566,7 +566,7 @@ body {
         background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
     }
 
-/* Формы */
+/* пїЅпїЅпїЅпїЅпїЅ */
 .form-control {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -592,7 +592,7 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Алерты */
+/* пїЅпїЅпїЅпїЅпїЅпїЅ */
 .alert {
     border: none;
     border-radius: 10px;
@@ -605,7 +605,7 @@ body {
     border-left: 4px solid #dc3545;
 }
 
-/* Анимация появления */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -622,12 +622,12 @@ body {
     animation: slideIn 0.6s ease-out;
 }
 
-/* Иконки в списках */
+/* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 .list-unstyled li {
     padding-left: 0;
 }
 
-/* Отзывчивые медиа-запросы */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 @media (max-width: 576px) {
     .hero-buttons .btn {
         display: block;

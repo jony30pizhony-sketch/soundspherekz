@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}SoundSphere - Контакты{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Хлебные крошки -->
+    <nav aria-label="Хлебные крошки" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Главная</a></li>
+            <li class="breadcrumb-item active">Контакты</li>
+        </ol>
+    </nav>
+
+    <!-- Герой секция -->
+    <section class="hero-section text-center py-5 mb-5">
+        <div class="container">
+            <h1 class="display-4 mb-4">Свяжитесь с нами</h1>
+            <p class="lead">Мы всегда рады помочь вам с выбором и ответить на все вопросы</p>
+        </div>
+    </section>
+
+    <div class="row">
+        <!-- Контактная информация -->
+        <div class="col-lg-4 mb-4">
+            <div class="glass-effect rounded-3 p-4 h-100">
+                <h3 class="mb-4">Контактная информация</h3>
+
+                <div class="contact-item mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="contact-icon me-3">
+                            <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Адрес</h5>
+                            <p class="mb-0 text-muted">мкр Аксай 3а 91/1</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-item mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="contact-icon me-3">
+                            <i class="fas fa-phone fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Телефон</h5>
+                            <p class="mb-0 text-muted">+7 (776) 984 00 53</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-item mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="contact-icon me-3">
+                            <i class="fas fa-envelope fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Email</h5>
+                            <p class="mb-0 text-muted">inform@soundsphere.kz</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-item mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="contact-icon me-3">
+                            <i class="fas fa-clock fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Время работы</h5>
+                            <p class="mb-0 text-muted">Пн-Пт: 9:00-18:00</p>
+                            <p class="mb-0 text-muted">Сб-Вс: 10:00-18:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links mt-4">
+                    <h5 class="mb-3">Мы в соцсетях</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-vk fa-2x"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-telegram fa-2x"> </i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube fa-2x"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Форма обратной связи -->
+        <div class="col-lg-8 mb-4">
+            <div class="glass-effect rounded-3 p-4">
+                <h3 class="mb-4">Обратная связь</h3>
+                <form id="contactForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label">Ваше имя *</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label">Телефон *</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Тема сообщения</label>
+                        <select class="form-select" id="subject">
+                            <option value="">Выберите тему</option>
+                            <option value="consultation">Консультация по товару</option>
+                            <option value="installation">Установка оборудования</option>
+                            <option value="warranty">Гарантийное обслуживание</option>
+                            <option value="cooperation">Сотрудничество</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="form-label">Сообщение *</label>
+                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fas fa-paper-plane me-2"></i>Отправить сообщение
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Карта -->
+    <section class="map-section mt-5">
+        <div class="glass-effect rounded-3 p-4">
+            <h3 class="mb-4">Как нас найти</h3>
+            <div class="map-placeholder rounded-3 text-center py-5">
+                <i class="fas fa-map fa-4x text-muted mb-3"></i>
+                <h5 class="text-muted">Интерактивная карта</h5>
+                <p class="text-muted">Здесь будет отображаться карта с нашим местоположением</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(67, 97, 238, 0.1);
+        border-radius: 50%;
+    }
+
+    .contact-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 1rem;
+    }
+
+        .contact-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+    .map-placeholder {
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px dashed rgba(255, 255, 255, 0.1);
+    }
+
+    .social-link {
+        color: #b8b8b8;
+        transition: all 0.3s ease;
+    }
+
+        .social-link:hover {
+            color: #4361ee;
+            transform: translateY(-3px);
+        }
+</style>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Здесь будет отправка формы на сервер
+        showNotification('Сообщение отправлено! Мы свяжемся с вами в ближайшее время.');
+        this.reset();
+    });
+
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'alert alert-success position-fixed';
+        notification.style.cssText = `
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        min-width: 300px;
+        background: rgba(40, 167, 69, 0.9);
+        backdrop-filter: blur(10px);
+        border: none;
+        border-radius: 10px;
+        color: white;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    `;
+        notification.innerHTML = `
+        <div class="d-flex align-items-center">
+            <i class="fas fa-check-circle me-2"></i>
+            <span>${message}</span>
+        </div>
+    `;
+
+        document.body.appendChild(notification);
+
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateX(100px)';
+            setTimeout(() => {
+                notification.remove();
+            }, 300);
+        }, 3000);
+    }
+</script>
+{% endblock %}
