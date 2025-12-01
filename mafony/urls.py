@@ -3,8 +3,12 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    # CRUD-операции для магнитол
     path('headunits/', views.HeadUnitListView.as_view(), name='headunit_list'),
     path('headunits/<int:pk>/', views.HeadUnitDetailView.as_view(), name='headunit_detail'),
+    path('headunits/create/', views.HeadUnitCreateView.as_view(), name='headunit_create'),
+    path('headunits/<int:pk>/update/', views.HeadUnitUpdateView.as_view(), name='headunit_update'),
+    path('headunits/<int:pk>/delete/', views.HeadUnitDeleteView.as_view(), name='headunit_delete'),
     path('about/', views.about, name='about'),
     path('contacts/', views.contacts, name='contacts'),
     path('cart/', views.cart, name='cart'),
@@ -15,5 +19,4 @@ urlpatterns = [
     path('remove-from-cart/<int:product_id>/', views.remove_from_cart, name='remove_from_cart'),
     path('add-to-wishlist/<int:product_id>/', views.add_to_wishlist, name='add_to_wishlist'),
     path('out-of-stock/', views.out_of_stock, name='out_of_stock'),
-    path('register/', views.register, name='register'),
 ]

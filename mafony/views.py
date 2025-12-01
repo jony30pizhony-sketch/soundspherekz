@@ -1,11 +1,10 @@
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
 from django.db.models import Q
-from django.shortcuts import redirect
-from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
 from .models import AndroidHeadUnit, Manufacturer
 
 class HeadUnitListView(ListView):
@@ -142,16 +141,40 @@ def process_payment(request):
 def out_of_stock(request):
     return render(request, 'mafony/error_out_of_stock.html')
 
-def register(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('home')
-    else:
-        form = UserCreationForm()
-    return render(request, 'users/register.html', {'form': form})
+# CRUD-операции через ORM для AndroidHeadUnit (магнитол)
+# Create - добавление новой магнитолы
+class HeadUnitCreateView(LoginRequiredMixin, CreateView):
+    """
+    Создание новой магнитолы через ORM.
+    Требует авторизации пользователя.
+    """
+    model = AndroidHeadUnit
+    template_name = 'mafony/headunit_form.html'
+    fields = ['name', 'manufacturer', 'country', 'screen_size', 'price', 
+              'description', 'android_version', 'ram', 'storage', 'image', 'in_stock']
+    success_url = reverse_lazy('headunit_list')
+
+# Update - редактирование магнитолы
+class HeadUnitUpdateView(LoginRequiredMixin, UpdateView):
+    """
+    Редактирование существующей магнитолы через ORM.
+    Требует авторизации пользователя.
+    """
+    model = AndroidHeadUnit
+    template_name = 'mafony/headunit_form.html'
+    fields = ['name', 'manufacturer', 'country', 'screen_size', 'price', 
+              'description', 'android_version', 'ram', 'storage', 'image', 'in_stock']
+    success_url = reverse_lazy('headunit_list')
+
+# Delete - удаление магнитолы
+class HeadUnitDeleteView(LoginRequiredMixin, DeleteView):
+    """
+    Удаление магнитолы через ORM.
+    Требует авторизации пользователя.
+    """
+    model = AndroidHeadUnit
+    template_name = 'mafony/headunit_confirm_delete.html'
+    success_url = reverse_lazy('headunit_list')
 
 # Error handlers
 def custom_404(request, exception):

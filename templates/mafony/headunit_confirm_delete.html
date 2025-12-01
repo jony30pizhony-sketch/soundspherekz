@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}SoundSphere - Удаление магнитолы{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="glass-effect rounded-3 p-4">
+                <h2 class="mb-4 text-danger">
+                    <i class="fas fa-exclamation-triangle me-2"></i>Подтверждение удаления
+                </h2>
+
+                <div class="alert alert-warning">
+                    <p class="mb-0">
+                        <strong>Внимание!</strong> Вы собираетесь удалить магнитолу:
+                    </p>
+                </div>
+
+                <div class="card bg-dark text-white mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ object.name }}</h5>
+                        <p class="card-text">
+                            <strong>Производитель:</strong> {{ object.manufacturer.name }}<br>
+                            <strong>Страна:</strong> {{ object.country.name }}<br>
+                            <strong>Цена:</strong> {{ object.price }} KZT
+                        </p>
+                    </div>
+                </div>
+
+                <p class="text-muted mb-4">
+                    Это действие нельзя отменить. Вы уверены, что хотите удалить эту магнитолу?
+                </p>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'headunit_list' %}" class="btn btn-secondary">
+                            <i class="fas fa-times me-2"></i>Отмена
+                        </a>
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash me-2"></i>Да, удалить
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
