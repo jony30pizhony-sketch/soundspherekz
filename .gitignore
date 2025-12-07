@@ -2,4 +2,12 @@
 __pycache__/
 *.pyc
 *.db
+*.sqlite3
 media/
+env/
+env1/
+*.sln
+*.pyproj
+*.pyproj.user
+.idea/
+.vscode/
